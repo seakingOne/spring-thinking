@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <bean class="com.ynhuang.thinking.conversion.customer.MyStringToPropertiesCovert" />
+        </property>
+    </bean>
+
+    <!-- java.util.Properties -->
+    <util:properties id="context1">
+        <prop key="id">1</prop>
+        <prop key="name">mercyblitz</prop>
+    </util:properties>
+
+    <bean id="user" class="com.ynhuang.thinking.conversion.customer.User">
+        <property name="id" value="1" />
+        <property name="name" value="ynhuang" />
+        <!--<property name="context" ref="context1" />-->
+        <property name="context"> <!-- Properties 类型 -->
+            <value>
+                id = 1
+                name = ynhuang
+            </value>
+        </property>
+    </bean>
+
+</beans>
