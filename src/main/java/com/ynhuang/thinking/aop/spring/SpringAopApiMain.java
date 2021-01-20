@@ -21,6 +21,7 @@ public class SpringAopApiMain {
         proxyFactory.addAdvice(new MyBeforeAdvice());
 
 
+
         DefaultEchaoImpl echao = (DefaultEchaoImpl)proxyFactory.getProxy();
 
         System.out.println(echao.echo("123"));
