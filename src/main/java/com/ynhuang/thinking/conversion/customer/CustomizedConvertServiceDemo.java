@@ -10,8 +10,6 @@ public class CustomizedConvertServiceDemo {
     public static void main(String[] args) {
 
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/convert/convert.xml");
-
-
         User bean = applicationContext.getBean(User.class);
         System.out.println(bean);
 

@@ -1,5 +1,6 @@
 package com.ynhuang.thinking.conversion.customer;
 
+import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.ConditionalGenericConverter;
 
@@ -12,6 +13,11 @@ import java.util.Set;
 
 /**
  * @author YuHuang
+ *
+ * {@link ConversionServiceFactoryBean}
+ * ConversionServiceFactoryBean用来代理ConversionService对象
+ *
+ * 需要注意这个convert是添加到convertService中，没有顺序（linkedHashMap），除非我们自己指定一个默认的convertService
  */
 public class MyStringToPropertiesCovert implements ConditionalGenericConverter {
 
